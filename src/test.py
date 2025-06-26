@@ -44,7 +44,7 @@ def test_basic_functionality():
     print("✓ Device modification works")
     
     # Test hub creation and pairing
-    hub_id = manager.create_main_hub("Test Hub")
+    hub_id = manager.create_hub("Test Hub")
     assert hub_id is not None, "Hub creation failed"
     
     success = manager.pair_device(switch_id)
@@ -82,7 +82,7 @@ def test_error_handling():
     
     # Test device deletion of paired device
     switch_id = manager.create_device("switch", "Test Switch")
-    manager.create_main_hub("Test Hub")
+    manager.create_hub("Test Hub")
     manager.pair_device(switch_id)
     
     success = manager.delete_device(switch_id)
